@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>বই এর কোট্টা | আমাদের টিম</title>
+    <style>
+        /* প্রিমিয়াম ডার্ক থিম ও স্মুথ স্ক্রলিং */
+        html { scroll-behavior: smooth; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Hind Siliguri', sans-serif; }
+        body { background-color: #0d0d0d; color: #e0e0e0; line-height: 1.6; }
+
+        /* হেডার */
+        header {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 20px 8%; background: rgba(30, 30, 30, 0.8);
+            backdrop-filter: blur(10px); position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid #333;
+        }
+        .logo { font-size: 24px; font-weight: bold; color: #ff9800; text-decoration: none; }
+        .nav-links a { color: #e0e0e0; text-decoration: none; margin-left: 20px; font-size: 16px; transition: 0.3s; }
+        .nav-links a:hover { color: #ff9800; }
+        .admin-login-btn { cursor: pointer; color: #aaa; font-size: 14px; margin-left: 20px; border: 1px solid #aaa; padding: 5px 10px; border-radius: 5px; transition: 0.3s; }
+        .admin-login-btn:hover { color: #ff9800; border-color: #ff9800; }
+
+        /* হিরো সেকশন */
+        .hero { height: 60vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; background: linear-gradient(135deg, #121212 0%, #1e1e1e 100%); padding: 20px; }
+        .hero h1 { font-size: 3rem; color: #ff9800; margin-bottom: 10px; }
+        .hero h2 { font-size: 1.5rem; margin-bottom: 15px; }
+        .hero h3 { font-size: 1.1rem; color: #bbb; max-width: 600px; }
+
+        /* পাবলিক টিম সেকশন (যোগাযোগ) */
+        .team-section { padding: 80px 5%; text-align: center; }
+        .section-title { font-size: 2.5rem; color: #ff9800; margin-bottom: 40px; text-transform: uppercase; }
+        .team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; max-width: 1200px; margin: 0 auto; }
+        .member-card { background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 20px; padding: 25px; transition: all 0.4s ease; text-align: center; }
+        .member-card:hover { transform: translateY(-10px); border-color: #ff9800; box-shadow: 0 10px 30px rgba(255, 152, 0, 0.2); }
+        .member-card h3 { color: #ff9800; font-size: 20px; }
+
+        /* লগইন মডাল */
+        .modal { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.9); backdrop-filter: blur(5px); }
+        .modal-content { background-color: #1a1a1a; margin: 10% auto; padding: 30px; border: 1px solid #333; border-radius: 15px; width: 90%; max-width: 400px; text-align: center; box-shadow: 0 0 20px rgba(255, 152, 0, 0.3); }
+        .close-btn { color: #aaa; float: right; font-size: 28px; font-weight: bold; cursor: pointer; }
+        .login-input { width: 100%; padding: 12px; margin: 10px 0; background: #0d0d0d; border: 1px solid #444; color: #fff; border-radius: 8px; }
+        .login-submit { width: 100%; padding: 12px; background: #ff9800; color: #000; font-weight: bold; border: none; border-radius: 8px; cursor: pointer; transition: 0.3s; }
+
+        /* অ্যাডমিন ড্যাশবোর্ড */
+        #admin-dashboard { display: none; padding: 50px 8%; animation: fadeIn 0.5s; }
+        @keyframes fadeIn { from {opacity: 0;} to {opacity: 1;} }
+        .dashboard-header { display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #333; padding-bottom: 20px; margin-bottom: 30px; }
+        .logout-btn { background: #ea4335; color: white; padding: 8px 15px; border: none; border-radius: 5px; cursor: pointer; }
+        
+        .dash-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
+        .dash-card { background: rgba(255, 255, 255, 0.05); border-radius: 15px; padding: 25px; border-left: 4px solid #ff9800; }
+        .dash-card h3 { color: #ff9800; margin-bottom: 15px; }
+
+        /* অ্যাডমিন প্যানেলে বিস্তারিত তথ্যের লিস্ট */
+        .admin-info-list { text-align: left; list-style: none; }
+        .admin-info-list li { background: rgba(255,255,255,0.03); padding: 15px; border-radius: 10px; margin-bottom: 15px; border: 1px solid #222; }
+        .admin-info-list b { color: #ff9800; }
+        .info-tag { font-size: 13px; color: #888; display: block; margin-top: 5px; }
+
+        .meet-btn { display: inline-block; background: #25D366; color: #000; padding: 10px 20px; text-decoration: none; font-weight: bold; border-radius: 8px; margin-top: 15px; }
+
+        footer { margin-top: 50px; padding: 30px; text-align: center; background: #111; color: #666; border-top: 1px solid #222; }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <a href="#" class="logo">বই এর কোট্টা 🧺</a>
+        <div class="nav-links">
+            <a href="#">হোম</a>
+            <a href="#contact">যোগাযোগ</a>
+            <a class="admin-login-btn" onclick="openLogin()">লগইন (Admin)</a>
+        </div>
+    </header>
+
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeLogin()">&times;</span>
+            <h2 style="color: #ff9800; margin-bottom: 20px;">অ্যাডমিন প্যানেল</h2>
+            <form onsubmit="handleLogin(event)">
+                <input type="text" id="username" class="login-input" placeholder="আপনার নাম (যেমন: Tamim)" required>
+                <input type="password" id="password" class="login-input" placeholder="ফোন নাম্বার (পাসওয়ার্ড)" required>
+                <button type="submit" class="login-submit">প্রবেশ করুন</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="main-website">
+        <section class="hero">
+            <h1>জ্ঞানের ঝুড়ি ভরুক সাশ্রয়ে</h1>
+            <h2>জ্ঞানের নতুন ঠিকানা</h2>
+            <h3>সাশ্রয়ী মূল্যে সৃজনশীলতার এক নতুন ঝুড়ি। খুব শীঘ্রই আমাদের পুরো ওয়েবসাইট নিয়ে হাজির হচ্ছি। সাথেই থাকুন!</h3>
+        </section>
+
+        <section class="team-section" id="contact">
+            <h2 class="section-title">আমাদের টিম ও যোগাযোগ 🤝</h2>
+            <div class="team-grid">
+                <div class="member-card"><h3>Md. Mehedi Hasan</h3></div>
+                <div class="member-card"><h3>Md Khairul Islam</h3></div>
+                <div class="member-card"><h3>Md. Walid Bin Ali</h3></div>
+                <div class="member-card"><h3>Md Mahadi Hasan Tamim</h3></div>
+            </div>
+        </section>
+    </div>
+
+    <div id="admin-dashboard">
+        <div class="dashboard-header">
+            <div>
+                <h1 style="color: #ff9800;">অ্যাডমিন ড্যাশবোর্ড 🛡️</h1>
+                <p>স্বাগতম, <span id="logged-user" style="color: #fff; font-weight: bold;"></span>!</p>
+            </div>
+            <button class="logout-btn" onclick="logout()">লগ আউট</button>
+        </div>
+
+        <div class="dash-grid">
+            <div class="dash-card">
+                <h3>👥 মেম্বারদের বিস্তারিত তথ্য</h3>
+                <ul class="admin-info-list">
+                    <li>
+                        <b>১. Md. Mehedi Hasan</b> (Mehedi)<br>
+                        <span class="info-tag">পেশা: স্টুডেন্ট | ফোন: ০১৯৮৮৮NT671</span>
+                        <span class="info-tag">ঠিকানা: (তথ্য প্রয়োজন)</span>
+                    </li>
+                    <li>
+                        <b>২. Md Khairul Islam</b> (Khairul)<br>
+                        <span class="info-tag">পেশা: স্টুডেন্ট | ফোন: ০১৮৪২৪৮০৭৩৯</span>
+                        <span class="info-tag">ঠিকানা: Gazipur board bazar</span>
+                    </li>
+                    <li>
+                        <b>৩. Md. Walid Bin Ali</b> (Walid)<br>
+                        <span class="info-tag">পেশা: স্টুডেন্ট | ফোন: ০১৯৯৫৩৫১৪০৩</span>
+                        <span class="info-tag">ঠিকানা: তেজগাঁও, ঢাকা</span>
+                    </li>
+                    <li>
+                        <b>৪. Md Mahadi Hasan Tamim</b> (Tamim)<br>
+                        <span class="info-tag">পেশা: স্টুডেন্ট | ফোন: ০১৭৯৯৫৮৪৩০০</span>
+                        <span class="info-tag">ঠিকানা: কুড়িগ্রাম</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="dash-card">
+                <h3>📌 অভ্যন্তরীণ নোটিশ</h3>
+                <ul style="color: #ccc; margin-left: 20px; line-height: 2;">
+                    <li>মিটিং রাত ৯ টায়।</li>
+                    <li>সাপ্তাহিক চাঁদা জমা দিন।</li>
+                    <li>নতুন ইনভেন্টরি আপডেট করুন।</li>
+                </ul>
+                <a href="https://meet.google.com/your-link" target="_blank" class="meet-btn">Google Meet</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        &copy; ২০২৬ বই এর কোট্টা। টিম মেম্বারদের তথ্য সুরক্ষিত।
+    </footer>
+
+    <script>
+        // লগইন ডাটা
+        const adminData = {
+            "mehedi": "01988854671",
+            "khairul": "01842480739",
+            "walid": "01995351403",
+            "tamim": "01799584300"
+        };
+
+        const modal = document.getElementById("loginModal");
+        const mainWeb = document.getElementById("main-website");
+        const dashBoard = document.getElementById("admin-dashboard");
+
+        function openLogin() { modal.style.display = "block"; }
+        function closeLogin() { modal.style.display = "none"; }
+
+        function handleLogin(e) {
+            e.preventDefault();
+            const userBox = document.getElementById("username").value.trim().toLowerCase();
+            const passBox = document.getElementById("password").value.trim();
+
+            if (adminData[userBox] && adminData[userBox] === passBox) {
+                closeLogin();
+                mainWeb.style.display = "none";
+                dashBoard.style.display = "block";
+                document.getElementById("logged-user").innerText = userBox.toUpperCase();
+                window.scrollTo(0, 0);
+            } else {
+                alert("ভুল নাম বা পাসওয়ার্ড!");
+            }
+        }
+
+        function logout() {
+            dashBoard.style.display = "none";
+            mainWeb.style.display = "block";
+            alert("লগ আউট সফল।");
+            window.scrollTo(0, 0);
+        }
+
+        window.onclick = function(event) { if (event.target == modal) closeLogin(); }
+    </script>
+</body>
+</html>
