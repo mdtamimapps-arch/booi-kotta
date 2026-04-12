@@ -114,7 +114,153 @@
         }
         .admin-login-btn:hover { color: #ff9800; border-color: #ff9800; }
 
-        .hero { height: 60vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; background: linear-gradient(135deg, #121212 0%, #1e1e1e 100%); padding: 20px; }
+        /* কাস্টমার কেয়ার / ডোনেশন স্ট্রিপ */
+        .care-strip {
+            display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px 16px;
+            padding: 8px 5%; background: #0a0a0a; border-bottom: 1px solid #252525; font-size: 0.82rem;
+        }
+        .care-strip a { color: #ff9800; text-decoration: none; }
+        .care-strip a:hover { text-decoration: underline; }
+        .care-hotline { color: #e0e0e0; }
+        .care-hotline strong { color: #ff9800; }
+        .donation-strip {
+            padding: 6px 5%; background: linear-gradient(90deg, rgba(255,152,0,0.08), transparent);
+            border-bottom: 1px solid #222; font-size: 0.8rem; color: #aaa;
+        }
+        .donation-strip a { color: #81c784; font-weight: 600; text-decoration: none; }
+        .donation-strip a:hover { color: #ff9800; }
+
+        .header-main {
+            display: grid; grid-template-columns: auto 1fr 1fr auto; align-items: center; gap: 14px;
+            padding: 14px 5%; width: 100%;
+        }
+        @media (max-width: 960px) {
+            .header-main { grid-template-columns: 1fr; }
+        }
+        .search-wrap.wide .search-input { width: min(100%, 360px); }
+        .search-wrap.elec .search-input { width: min(100%, 320px); border-color: #3d5a80; }
+        .search-wrap.elec::before { content: "⚡"; }
+        .app-cta {
+            display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+            padding: 8px 12px; border-radius: 12px; background: rgba(255,255,255,0.04); border: 1px solid #333;
+        }
+        .app-cta img { height: 40px; width: auto; display: block; }
+        .app-cta .app-text { font-size: 0.75rem; color: #888; line-height: 1.3; }
+        .app-cta .app-text strong { color: #fff; display: block; font-size: 0.9rem; }
+
+        .header-sub {
+            display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px;
+            padding: 10px 5% 14px; border-top: 1px solid #2a2a2a; width: 100%;
+        }
+        .user-row { display: flex; align-items: center; gap: 8px 14px; flex-wrap: wrap; font-size: 0.9rem; }
+        .user-row a { color: #ccc; text-decoration: none; }
+        .user-row a:hover { color: #ff9800; }
+        .cart-link { display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; border: 1px solid #444; border-radius: 8px; }
+        .cart-link:hover { border-color: #ff9800; color: #ff9800; }
+
+        .main-nav {
+            display: flex; flex-wrap: wrap; align-items: center; gap: 6px 4px;
+        }
+        .main-nav a {
+            color: #ddd; text-decoration: none; padding: 8px 12px; border-radius: 8px; font-size: 0.92rem;
+            transition: background 0.2s, color 0.2s;
+        }
+        .main-nav a:hover { background: rgba(255,152,0,0.12); color: #ff9800; }
+
+        .promo-row {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px;
+            max-width: 1200px; margin: 0 auto 24px; padding: 0 5%;
+        }
+        .promo-card {
+            background: linear-gradient(145deg, #1e1e1e, #141414); border: 1px solid #333; border-radius: 14px;
+            padding: 16px 18px; text-align: left; transition: transform 0.25s, border-color 0.25s;
+        }
+        .promo-card:hover { transform: translateY(-4px); border-color: #ff9800; }
+        .promo-card h4 { color: #ff9800; font-size: 1rem; margin-bottom: 6px; }
+        .promo-card p { color: #999; font-size: 0.85rem; }
+
+        .pill-row {
+            display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; max-width: 1100px; margin: 0 auto 28px;
+            padding: 0 5%;
+        }
+        .pill {
+            display: inline-block; padding: 8px 14px; border-radius: 999px; background: rgba(255,255,255,0.06);
+            border: 1px solid #333; color: #ccc; font-size: 0.85rem; text-decoration: none; transition: 0.2s;
+        }
+        .pill:hover { border-color: #ff9800; color: #ff9800; }
+
+        .toolbar-row {
+            display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px;
+            max-width: 1200px; margin: 0 auto 20px; padding: 0 5%;
+        }
+        .toolbar-row label { color: #888; font-size: 0.85rem; margin-right: 8px; }
+        .toolbar-row select {
+            background: #1a1a1a; color: #e0e0e0; border: 1px solid #444; border-radius: 8px; padding: 8px 12px; font-family: inherit;
+        }
+        .filter-chips { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+        .chip { padding: 6px 12px; border-radius: 8px; background: #1a1a1a; border: 1px solid #333; font-size: 0.8rem; color: #aaa; cursor: default; }
+
+        .categories-panel {
+            max-width: 1200px; margin: 0 auto 40px; padding: 24px 5%; background: #0f0f0f; border: 1px solid #252525; border-radius: 16px;
+        }
+        .categories-panel h3 { color: #ff9800; margin-bottom: 16px; font-size: 1.15rem; }
+        .cat-cloud {
+            display: flex; flex-wrap: wrap; gap: 8px; max-height: 220px; overflow: hidden; position: relative;
+            transition: max-height 0.4s ease;
+        }
+        .cat-cloud.expanded { max-height: none; }
+        .cat-cloud .pill { cursor: pointer; border-style: dashed; }
+        .cat-toggle {
+            margin-top: 14px; background: transparent; border: 1px solid #ff9800; color: #ff9800;
+            padding: 8px 16px; border-radius: 8px; cursor: pointer; font-family: inherit; font-size: 0.9rem;
+        }
+        .cat-toggle:hover { background: rgba(255,152,0,0.1); }
+
+        .browse-section {
+            max-width: 1200px; margin: 0 auto 48px; padding: 0 5%;
+        }
+        .browse-head {
+            display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; margin-bottom: 16px;
+        }
+        .browse-head h3 { color: #fff; font-size: 1.25rem; }
+        .view-all { color: #ff9800; text-decoration: none; font-size: 0.9rem; }
+        .view-all:hover { text-decoration: underline; }
+        .horizontal-scroll {
+            display: flex; gap: 16px; overflow-x: auto; padding-bottom: 10px; scroll-snap-type: x mandatory;
+        }
+        .horizontal-scroll .product-card { min-width: 200px; flex-shrink: 0; scroll-snap-align: start; }
+
+        .electronics-section { padding: 40px 5%; background: linear-gradient(180deg, #0a1628 0%, #0d0d0d 100%); border-top: 1px solid #1e3a5f; }
+        .electronics-section .section-title { margin-bottom: 20px; }
+        .elec-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; max-width: 1200px; margin: 0 auto; }
+        .elec-card {
+            background: #121c2c; border: 1px solid #2a3f5f; border-radius: 12px; padding: 16px; text-align: center;
+            transition: 0.25s;
+        }
+        .elec-card:hover { border-color: #64b5f6; box-shadow: 0 8px 24px rgba(100,181,246,0.12); }
+        .elec-card .elec-icon { font-size: 2rem; margin-bottom: 8px; }
+        .elec-card h4 { color: #90caf9; font-size: 0.95rem; margin-bottom: 6px; }
+        .elec-card p { color: #789; font-size: 0.8rem; }
+
+        .footer-mega { background: #080808; border-top: 1px solid #222; padding: 48px 5% 24px; text-align: left; }
+        .footer-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 28px;
+            max-width: 1200px; margin: 0 auto 32px;
+        }
+        .footer-col h4 { color: #ff9800; font-size: 0.95rem; margin-bottom: 14px; }
+        .footer-col ul { list-style: none; }
+        .footer-col li { margin-bottom: 8px; }
+        .footer-col a { color: #888; text-decoration: none; font-size: 0.88rem; }
+        .footer-col a:hover { color: #ff9800; }
+        .footer-about { max-width: 1200px; margin: 0 auto; padding-top: 24px; border-top: 1px solid #1a1a1a; color: #666; font-size: 0.82rem; line-height: 1.7; }
+        .social-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 12px; }
+        .social-row a {
+            display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px;
+            border-radius: 8px; background: #1a1a1a; border: 1px solid #333; color: #aaa; text-decoration: none; font-size: 0.85rem;
+        }
+        .social-row a:hover { border-color: #ff9800; color: #ff9800; }
+
+        .hero { min-height: 60vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; background: linear-gradient(135deg, #121212 0%, #1e1e1e 100%); padding: 36px 20px 28px; }
         .hero h1 { font-size: 3rem; color: #ff9800; margin-bottom: 10px; }
         .hero h2 { font-size: 1.5rem; margin-bottom: 15px; }
         .hero h3 { font-size: 1.1rem; color: #bbb; max-width: 600px; }
@@ -211,21 +357,53 @@
             <span id="live-date-bn" aria-live="polite"></span>
         </div>
 
+        <div class="care-strip">
+            <div class="care-hotline">
+                <strong>Customer Care</strong> · হটলাইন: <strong>01799584300</strong> · (সকাল ৯টা – রাত ৮টা)
+            </div>
+            <a href="#track-order">অর্ডার ট্র্যাক করুন</a>
+        </div>
+        <div class="donation-strip">
+            <span>বই ডোনেশন করতে চান?</span> <a href="#donation">বই প্লাস ডোনেশন</a> — জ্ঞান ছড়িয়ে দিন।
+        </div>
+
         <header>
-            <a href="#" class="logo-wrap">
-                <!-- লোগো ইমেজ: নিচের src তে আপনার লোগোর লিংক বসান (খালি রাখলে শুধু টেক্সট) -->
-                <img src="" alt="বই প্লাস লোগো" class="site-logo" id="siteLogo" width="44" height="44">
-                <span class="logo-text">বই প্লাস ➕📚</span>
-            </a>
-            <div class="header-actions">
-                <div class="search-wrap">
+            <div class="header-main">
+                <!-- লোগো: নিচের img এর src="" তে লোকাল ফাইল (যেমন images/logo.png) বা পূর্ণ ইমেজ URL বসান -->
+                <a href="#" class="logo-wrap">
+                    <img src="" alt="বই প্লাস লোগো" class="site-logo" id="siteLogo" width="48" height="48">
+                    <span class="logo-text">বই প্লাস ➕📚</span>
+                </a>
+                <div class="search-wrap wide">
                     <label for="bookSearch" class="visually-hidden" style="position:absolute;width:1px;height:1px;overflow:hidden;">বই খুঁজুন</label>
-                    <input type="search" id="bookSearch" class="search-input" placeholder="বই বা লেখক খুঁজুন..." autocomplete="off">
+                    <input type="search" id="bookSearch" class="search-input" placeholder="বই, লেখক বা বিষয় খুঁজুন..." autocomplete="off">
                 </div>
-                <div class="nav-links">
+                <div class="search-wrap elec">
+                    <label for="electronicsSearch" class="visually-hidden" style="position:absolute;width:1px;height:1px;overflow:hidden;">ইলেক্ট্রনিক্স খুঁজুন</label>
+                    <input type="search" id="electronicsSearch" class="search-input" placeholder="ইলেক্ট্রনিক্স: Charger, Fan, Smart Watch…" autocomplete="off">
+                </div>
+                <div class="app-cta">
+                    <a href="https://play.google.com/store/apps" target="_blank" rel="noopener noreferrer" title="Google Play">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play থেকে ডাউনলোড">
+                    </a>
+                    <div class="app-text"><strong>বই প্লাস অ্যাপ</strong>Download করুন</div>
+                </div>
+            </div>
+            <div class="header-sub">
+                <div class="user-row">
+                    <span>Hello,</span> <a href="#signin">Sign in</a>
+                    <a href="#cart" class="cart-link" title="কার্ট">🛒 কার্ট <span id="cart-count">0</span></a>
+                </div>
+                <nav class="main-nav" aria-label="মূল মেনু">
                     <a href="#">হোম</a>
-                    <a href="#books">বইসমূহ</a>
+                    <a href="#books">বই</a>
+                    <a href="#electronics">ইলেক্ট্রনিক্স</a>
+                    <a href="#super-store">সুপার স্টোর</a>
+                    <a href="#kids">কিডস জোন</a>
+                    <a href="#institutional">প্রাতিষ্ঠানিক অর্ডার</a>
                     <a href="#contact">যোগাযোগ</a>
+                </nav>
+                <div class="nav-links">
                     <button type="button" class="admin-login-btn" onclick="openLogin()">লগইন (Admin)</button>
                 </div>
             </div>
@@ -245,15 +423,121 @@
     </div>
 
     <div id="main-website">
-        <section class="hero">
+        <section class="hero" id="top">
             <h1>বই প্লাস: জ্ঞানের নতুন দিগন্ত</h1>
             <h2>সাশ্রয়ী মূল্যে আপনার প্রিয় বই</h2>
             <h3>সৃজনশীলতা এবং তথ্যের এক আধুনিক প্ল্যাটফর্ম। খুব শীঘ্রই আমরা নতুন সব ফিচার নিয়ে আসছি। সাথেই থাকুন!</h3>
         </section>
 
+        <section id="track-order" style="scroll-margin-top:120px;padding:14px 5%;background:#141414;border-bottom:1px solid #2a2a2a;text-align:center;">
+            <strong style="color:#ff9800;">অর্ডার ট্র্যাক করুন</strong>
+            <span style="color:#888;margin:0 8px;">— অর্ডার আইডি দিয়ে স্ট্যাটাস (শীঘ্রই লাইভ)। হটলাইন: 01799584300</span>
+        </section>
+        <section id="donation" style="scroll-margin-top:120px;padding:12px 5%;background:#0f1a12;border-bottom:1px solid #253528;text-align:center;font-size:0.9rem;color:#a5d6a7;">
+            <strong>বই ডোনেশন:</strong> ব্যবহৃত বই দিন—<span style="color:#ccc;">শীঘ্রই সংগ্রহ পয়েন্ট ও ঠিকানা জানানো হবে।</span>
+        </section>
+
+        <div class="promo-row">
+            <div class="promo-card"><h4>বেস্টসেলার অ্যাওয়ার্ড ’২৫</h4><p>সেরা বই ও লেখকদের নির্বাচন।</p></div>
+            <div class="promo-card"><h4>আজকের অফার !</h4><p>প্রতিদিন নতুন ছাড়।</p></div>
+            <div class="promo-card"><h4>বইমেলা ২০২৬</h4><p>মেলা স্পেশাল কালেকশন।</p></div>
+        </div>
+
+        <div class="pill-row">
+            <span class="pill" style="border-color:#ff9800;color:#ff9800;">Just for you ✨</span>
+            <a href="#books" class="pill">লেখক</a>
+            <a href="#books" class="pill">বিষয়</a>
+            <a href="#books" class="pill">প্রকাশনী</a>
+            <a href="#books" class="pill">বইমেলা ২০২৬</a>
+            <a href="#books" class="pill">একাডেমিক বই</a>
+            <a href="#books" class="pill">ই-বুক</a>
+            <a href="#books" class="pill">অতিরিক্ত ছাড়ের বই</a>
+        </div>
+
+        <div class="toolbar-row">
+            <div>
+                <label for="sortBooks">সাজান</label>
+                <select id="sortBooks" aria-label="সাজান">
+                    <option value="">Default</option>
+                    <option>Best Seller</option>
+                    <option>New Released</option>
+                    <option>Price - Low to High</option>
+                    <option>Price - High to Low</option>
+                    <option>Discount - High to Low</option>
+                </select>
+            </div>
+            <div class="filter-chips">
+                <span class="chip">eBook</span>
+                <span class="chip">In Stock</span>
+                <span class="chip">Filter</span>
+                <span class="chip">Reset</span>
+            </div>
+        </div>
+
+        <section class="categories-panel" id="shop-categories" aria-labelledby="cat-heading">
+            <h3 id="cat-heading">Shop by Categories — বই</h3>
+            <p style="color:#888;font-size:0.9rem;margin-bottom:12px;">নিচে জনপ্রিয় ক্যাটাগরি—আরও দেখতে বাটন চাপুন।</p>
+            <div id="category-cloud" class="cat-cloud"></div>
+            <button type="button" class="cat-toggle" id="catToggle" aria-expanded="false">আরও ক্যাটাগরি দেখুন</button>
+        </section>
+
+        <section class="browse-section" id="weekly-ebook">
+            <div class="browse-head">
+                <h3>Weekly Best Seller — ই-বুক</h3>
+                <a href="#books" class="view-all">View All →</a>
+            </div>
+            <div class="horizontal-scroll" id="weekly-scroll"></div>
+        </section>
+
+        <div class="browse-section" id="category-rows"></div>
+
+        <section id="super-store" class="browse-section" style="scroll-margin-top:120px;">
+            <div class="browse-head">
+                <h3>সুপার স্টোর</h3>
+                <a href="#electronics" class="view-all">ইলেক্ট্রনিক্স দেখুন →</a>
+            </div>
+            <p style="color:#888;font-size:0.92rem;max-width:800px;">স্টেশনারি, খাবার, গিফট ভাউচার, কিচেন ও আরও—শীঘ্রই পণ্য তালিকা।</p>
+        </section>
+
+        <section id="institutional" class="categories-panel" style="scroll-margin-top:120px;">
+            <h3>প্রাতিষ্ঠানিক অর্ডার</h3>
+            <p style="color:#aaa;font-size:0.92rem;">লাইব্রেরি, স্কুল, কলেজ ও অফিসের বাল্ক অর্ডার—যোগাযোগ: <strong style="color:#ff9800;">01799584300</strong></p>
+        </section>
+
+        <section class="electronics-section" id="electronics">
+            <h2 class="section-title">ইলেক্ট্রনিক্স 🔌</h2>
+            <p style="color:#8ab4d8;max-width:720px;margin:0 auto 24px;text-align:center;font-size:0.95rem;">
+                Search: Charger, Fan, Smart Watch, Auto Volt Shield — নিচের কার্ডগুলো ফিল্টার হবে।
+            </p>
+            <div class="elec-grid" id="elec-grid">
+                <div class="elec-card" data-elec-tags="charger adapter usb">
+                    <div class="elec-icon">🔌</div>
+                    <h4>চার্জার ও অ্যাডাপ্টার</h4>
+                    <p>ফোন / ল্যাপটপ চার্জার</p>
+                </div>
+                <div class="elec-card" data-elec-tags="fan desk cooling">
+                    <div class="elec-icon">🌀</div>
+                    <h4>ফ্যান</h4>
+                    <p>টেবিল / রিচার্জেবল</p>
+                </div>
+                <div class="elec-card" data-elec-tags="smart watch wearable">
+                    <div class="elec-icon">⌚</div>
+                    <h4>স্মার্ট ওয়াচ</h4>
+                    <p>হেলথ ট্র্যাকিং</p>
+                </div>
+                <div class="elec-card" data-elec-tags="auto volt shield stabilizer orelco">
+                    <div class="elec-icon">⚡</div>
+                    <h4>Auto Volt Shield</h4>
+                    <p>ভোল্ট স্টেবিলাইজার</p>
+                </div>
+            </div>
+        </section>
+
         <section class="product-section" id="books">
             <h2 class="section-title">আমাদের সংগ্রহ 📚</h2>
-            <div class="product-grid">
+            <p style="color:#888;margin:-24px auto 28px;max-width:560px;font-size:0.95rem;">Recently sold book products — উপরের সার্চ দিয়ে ফিল্টার করুন।</p>
+            <!-- নতুন বই: এই গ্রিডের ভেতর একটা সম্পূর্ণ product-card ব্লক কপি করে বসান। data-search এ বইনাম+লেখক (সার্চ মিলবে)। ছবি = img src -->
+            <div class="product-grid" id="product-grid-main">
 
                 <div class="product-card" data-search="প্যারাডক্সিক্যাল সাজিদ আরিফ আজাদ">
                     <div class="product-img">
@@ -321,10 +605,10 @@
         <section class="team-section" id="contact">
             <h2 class="section-title">আমাদের টিম ও যোগাযোগ 🤝</h2>
             <div class="team-grid">
-                <div class="member-card"><h3>Md. Mehedi Hasan</h3></div>
-                <div class="member-card"><h3>Md Khairul Islam</h3></div>
-                <div class="member-card"><h3>Md. Walid Bin Ali</h3></div>
-                <div class="member-card"><h3>Md Mahadi Hasan Tamim</h3></div>
+                <div class="member-card"><h3>Md. Mehedi Hasan</h3><p style="color:#888;font-size:0.95rem;margin-top:8px;">Mehedi EEE</p></div>
+                <div class="member-card"><h3>Md Khairul Islam</h3><p style="color:#888;font-size:0.95rem;margin-top:8px;">Khairul ALCHEMIST</p></div>
+                <div class="member-card"><h3>Md. Walid Bin Ali</h3><p style="color:#888;font-size:0.95rem;margin-top:8px;">Walid ARCHITECTURE</p></div>
+                <div class="member-card"><h3>Md Mahadi Hasan Tamim</h3><p style="color:#888;font-size:0.95rem;margin-top:8px;">Tamim</p></div>
             </div>
         </section>
     </div>
@@ -376,7 +660,7 @@
                     </form>
                 </div>
                 <div id="notice-no-edit-msg" class="notice-lock-msg" hidden>
-                    👁 এই যে বন্ধু শোনো তুমি শুধু নোটিশ <strong>দেখতে</strong> পারবস। <strong>যোগ বা মুছতে</strong> চেষ্টা <strong>Tamim</strong> (করবানা অকে।
+                    👁 এই যে বন্ধু শোনো—তুমি শুধু নোটিশ <strong>দেখতে</strong> পারবে। <strong>যোগ বা মুছতে</strong> চেষ্টা করো না; <strong>Tamim</strong>-ই করবে। 😄
                 </div>
                 <div id="notice-list-admin"></div>
                 <a href="https://meet.google.com/your-link" target="_blank" rel="noopener noreferrer" class="meet-btn">Google Meet</a>
@@ -384,8 +668,60 @@
         </div>
     </div>
 
-    <footer>
-        &copy; ২০২৬ বই প্লাস। টিম মেম্বারদের তথ্য সুরক্ষিত। Design_by_TAMIM
+    <footer class="footer-mega" id="site-footer">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>Customer Care</h4>
+                <p style="color:#888;font-size:0.88rem;line-height:1.6;margin-bottom:10px;">
+                    হটলাইন: <strong style="color:#ff9800;">01799584300</strong><br>
+                    (সকাল ৯টা – রাত ৮টা)<br>
+                    <a href="mailto:care@boiplus.local">care@boiplus.local</a>
+                </p>
+            </div>
+            <div class="footer-col">
+                <h4>কর্পোরেট / বিক্রেতা</h4>
+                <ul>
+                    <li><a href="#seller">বিক্রেতা হতে চান</a></li>
+                    <li><a href="#institutional">প্রাতিষ্ঠানিক অর্ডার</a></li>
+                    <li><a href="#wholesale">হোলসেল</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>ঠিকানা</h4>
+                <p style="color:#888;font-size:0.88rem;">ঢাকা, বাংলাদেশ<br><a href="mailto:admin@boiplus.local">admin@boiplus.local</a></p>
+            </div>
+            <div class="footer-col">
+                <h4>সাপোর্ট</h4>
+                <ul>
+                    <li><a href="#track-order">অর্ডার ট্র্যাক</a></li>
+                    <li><a href="#contact">যোগাযোগ</a></li>
+                    <li><a href="#">সচরাচর জিজ্ঞাসা</a></li>
+                    <li><a href="#">হেল্প ডেস্ক</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>পলিসি</h4>
+                <ul>
+                    <li><a href="#">শর্তাবলী</a></li>
+                    <li><a href="#">গোপনীয়তা</a></li>
+                    <li><a href="#">রিটার্ন ও রিফান্ড</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>JOIN US</h4>
+                <div class="social-row" aria-label="সোশ্যাল">
+                    <a href="#" aria-label="Facebook">f</a>
+                    <a href="#" aria-label="Twitter">𝕏</a>
+                    <a href="#" aria-label="Telegram">✈</a>
+                    <a href="#" aria-label="WhatsApp">W</a>
+                </div>
+                <p style="margin-top:12px;font-size:0.82rem;color:#666;">Download App — উপরে Google Play ব্যাজ।</p>
+            </div>
+        </div>
+        <div class="footer-about">
+            <p><strong style="color:#aaa;">বই প্লাস</strong> — বই, ইলেক্ট্রনিক্স ও আরও পণ্যের জন্য একটি আধুনিক প্ল্যাটফর্ম। বিশাল ক্যাটাগরি, সহজ নেভিগেশন ও দ্রুত ডেলিভারির লক্ষ্যে কাজ করছি।</p>
+            <p style="margin-top:12px;">&copy; ২০২৬ বই প্লাস। টিম মেম্বারদের তথ্য সুরক্ষিত। Design_by_TAMIM</p>
+        </div>
     </footer>
 
     <script>
@@ -450,7 +786,7 @@
                 wrap.hidden = true;
                 msg.hidden = false;
                 if (intro) {
-                    intro.textContent = "আপনি মেম্বার হিসেবে ড্যাশবোর্ড দেখছেন। চাপ নিবেনন না নোটিশ শুধু পড়বেন; সম্পাদনা করার দরকার নাই ।";
+                    intro.textContent = "আপনি মেম্বার হিসেবে ড্যাশবোর্ড দেখছেন। চাপ নিবেন না—নোটিশ শুধু পড়বেন; সম্পাদনা করার দরকার নাই।";
                 }
             }
         }
@@ -548,7 +884,7 @@
                 applyNoticeEditorUI();
                 renderNotices();
             } else {
-                alert("ভুল নাম বা পাসওয়ার্ড!মামুর বেটা কি দিয়েছিস😁😀");
+                alert("ভুল নাম বা পাসওয়ার্ড! মামুর বেটা কি দিয়েছিস 😁😀");
             }
         }
 
@@ -600,15 +936,118 @@
         /* বই সার্চ */
         document.getElementById("bookSearch").addEventListener("input", function () {
             const q = this.value.trim().toLowerCase();
-            document.querySelectorAll(".product-card").forEach((card) => {
+            document.querySelectorAll("#product-grid-main .product-card").forEach((card) => {
                 const hay = (card.getAttribute("data-search") || "").toLowerCase();
                 if (!q || hay.includes(q)) card.classList.remove("hidden-search");
                 else card.classList.add("hidden-search");
             });
         });
 
-        /* লোগো: চাইলে JS দিয়ে src সেট করতে পারেন */
-        /* উদাহরণ: document.getElementById("siteLogo").src = "logo.png"; */
+        const BOOK_CATEGORIES = [
+            "কৃষি ও কৃষক", "ড্রয়িং, পেইন্টিং ডিজাইন ও ফটোগ্রাফি", "বাংলাদেশ", "জীবনী, স্মৃতিচারণ ও সাক্ষাৎকার",
+            "ব্যবসা, বিনিয়োগ ও অর্থনীতি", "শিশু-কিশোর বই", "রচনাসমগ্র/সংকলন", "কমিকস, নকশা ও ছবির গল্প",
+            "কম্পিউটার, ইন্টারনেট, ফ্রিল্যান্সিং ও আউটসোর্সিং", "রান্নাবান্না, খাদ্য ও পুষ্টি", "ফ্যাশন ও রূপচর্চা",
+            "স্বাস্থ্য, পরিচর্যা ও রোগ নিরাময়", "ইতিহাস ও ঐতিহ্য", "ব্যঙ্গ ও রম্যরচনা", "প্রফেশনাল, জার্নাল ও রেফারেন্স",
+            "গণমাধ্যম ও সাংবাদিকতা", "ভাষা ও অভিধান", "মুক্তিযুদ্ধ", "সংগীত, চলচ্চিত্র ও বিনোদন", "পরিবেশ ও প্রকৃতি",
+            "বিবিধ", "দর্শন", "ধর্মীয় বই", "গণিত, বিজ্ঞান ও প্রযুক্তি", "আত্ম-উন্নয়ন, মোটিভেশনাল ও মেডিটেশন",
+            "খেলাধুলা", "অনুবাদ", "ভ্রমণ ও প্রবাস", "অমর একুশে গ্রন্থমেলা", "আইন ও বিচার", "প্রবন্ধ",
+            "বেস্ট সেলার বুকস", "ম্যাগাজিন", "বই প্লাস কালেকশন", "গল্প", "উপন্যাস", "বিদেশি ভাষার বই", "রাজনীতি",
+            "সমাজ, সভ্যতা ও সংস্কৃতি", "পশ্চিমবঙ্গের বই", "ছড়া, কবিতা ও আবৃত্তি", "রহস্য, গোয়েন্দা, ভৌতিক, থ্রিলার ও অ্যাডভেঞ্চার",
+            "প্রাণী ও জীবজগৎ", "সায়েন্স ফিকশন", "ভর্তি, নিয়োগ ও প্রস্তুতি পরীক্ষা", "একাডেমিক", "ইউনিভার্সিটি",
+            "ইসলামি বই", "ইংরেজি ভাষার বই", "ই-বুক", "অতিরিক্ত ছাড়ের বই", "বইমেলা ২০২৬", "প্রি অর্ডার",
+            "كتب اللغة العربية والأردية", "অলিম্পিয়াড", "অফার", "প্যারালাল টেক্সট", "ভর্তি প্রস্তুতি",
+            "ফ্রিল্যান্সিং ও আউটসোর্সিং", "বিজ্ঞান ও প্রযুক্তি", "বিনিয়োগ ও অর্থনীতি", "পরিচর্যা ও রোগ নিরাময়",
+            "রহস্য ও অ্যাডভেঞ্চার", "আত্ম-উন্নয়ন ও মেডিটেশন", "শিশু-কিশোর বই", "নাটকের বই", "পরিবার ও প্যারেন্টিং",
+            "পুরস্কারপ্রাপ্ত বই", "ইন স্টক বুকস", "প্রসেসিং", "স্টকে থাকা বিদেশি বই"
+        ];
+
+        function renderCategoryCloud() {
+            const box = document.getElementById("category-cloud");
+            if (!box) return;
+            box.innerHTML = BOOK_CATEGORIES.map(function (name) {
+                return '<a href="#books" class="pill" title="' + name.replace(/"/g, "&quot;") + '">' + name + "</a>";
+            }).join("");
+        }
+
+        var catToggleEl = document.getElementById("catToggle");
+        if (catToggleEl) {
+            catToggleEl.addEventListener("click", function () {
+                const cloud = document.getElementById("category-cloud");
+                if (!cloud) return;
+                const expanded = cloud.classList.toggle("expanded");
+                this.setAttribute("aria-expanded", expanded ? "true" : "false");
+                this.textContent = expanded ? "কম দেখুন" : "আরও ক্যাটাগরি দেখুন";
+            });
+        }
+
+        function buildMiniCard(title, author) {
+            return (
+                '<div class="product-card" style="min-width:160px">' +
+                '<div class="product-img" style="height:140px;background:#252525"><span style="display:flex;align-items:center;justify-content:center;height:100%;color:#555;font-size:2rem">📖</span></div>' +
+                '<div class="product-info"><h4 style="font-size:14px">' + title + "</h4>" +
+                '<p class="author" style="font-size:12px">' + author + "</p></div></div>"
+            );
+        }
+
+        function populateWeeklyRow() {
+            const row = document.getElementById("weekly-scroll");
+            if (!row) return;
+            const items = [
+                ["প্যারাডক্সিক্যাল সাজিদ", "আরিফ আজাদ"],
+                ["হিমুর হাতে কয়েকটি নীলপদ্ম", "হুমায়ূন আহমেদ"],
+                ["প্রোগ্রামিংয়ের চৌদ্দগোষ্ঠী", "ঝংকার মাহবুব"]
+            ];
+            row.innerHTML = items.map(function (x) { return buildMiniCard(x[0], x[1]); }).join("");
+        }
+
+        const CATEGORY_ROW_DEFS = [
+            { title: "ইসলামি বই", slug: "islam" },
+            { title: "উপন্যাস", slug: "novel" },
+            { title: "ভর্তি ও প্রস্তুতি পরীক্ষা", slug: "admission" },
+            { title: "শিশু-কিশোর বই", slug: "kids", sectionId: "kids" },
+            { title: "আত্ম-উন্নয়ন ও মেডিটেশন", slug: "self" },
+            { title: "রহস্য ও অ্যাডভেঞ্চার", slug: "thriller" },
+            { title: "পশ্চিমবঙ্গের বই", slug: "wb" },
+            { title: "ইংরেজি ভাষার বই", slug: "en" },
+            { title: "গল্প", slug: "story" },
+            { title: "ফ্রিল্যান্সিং ও আউটসোর্সিং", slug: "freelance" },
+            { title: "বিজ্ঞান ও প্রযুক্তি", slug: "sci" },
+            { title: "ইতিহাস ও ঐতিহ্য", slug: "hist" }
+        ];
+
+        function populateCategoryRows() {
+            const host = document.getElementById("category-rows");
+            if (!host) return;
+            host.innerHTML = CATEGORY_ROW_DEFS.map(function (def) {
+                const sid = def.sectionId ? def.sectionId : "cat-row-" + def.slug;
+                return (
+                    '<section class="browse-section" id="' + sid + '">' +
+                    '<div class="browse-head"><h3>' + def.title + '</h3><a href="#books" class="view-all">View All →</a></div>' +
+                    '<div class="horizontal-scroll">' +
+                    buildMiniCard("নমুনা বই ১", "লেখক") +
+                    buildMiniCard("নমুনা বই ২", "লেখক") +
+                    buildMiniCard("নমুনা বই ৩", "লেখক") +
+                    buildMiniCard("নমুনা বই ৪", "লেখক") +
+                    "</div></section>"
+                );
+            }).join("");
+        }
+
+        document.getElementById("electronicsSearch").addEventListener("input", function () {
+            const q = this.value.trim().toLowerCase();
+            document.querySelectorAll("#elec-grid .elec-card").forEach(function (el) {
+                const tags = (el.getAttribute("data-elec-tags") || "").toLowerCase();
+                const text = el.textContent.toLowerCase();
+                const ok = !q || tags.includes(q) || text.includes(q);
+                el.style.display = ok ? "" : "none";
+            });
+        });
+
+        renderCategoryCloud();
+        populateWeeklyRow();
+        populateCategoryRows();
+
+        /* লোগো: document.getElementById("siteLogo").src = "logo.png"; */
     </script>
 </body>
 </html>
